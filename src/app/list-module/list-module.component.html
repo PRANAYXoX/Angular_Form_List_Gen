@@ -1,0 +1,24 @@
+<app-from-module (eventMsg)="getData($event)"></app-from-module>
+<div class="container-fluid">
+  <div class="row ln">
+    <div class="col-12 head align d-flex bg-warning">LIST OF CONTACTS</div>
+  </div>
+  <div class="row ln">
+    <div class="col-3 title align d-flex">SERIAL</div>
+    <div class="col-3 title align d-flex">NAME</div>
+    <div class="col-3 title align d-flex">EMAIL</div>
+    <div class="col-3 title align d-flex">ADDRESS</div>
+  </div>
+  <ng-template #data>
+    <div class="row ln" *ngFor="let contact of contactArr">
+      <div class="col-3 align d-flex sr">{{ contact.name }}</div>
+      <div class="col-3 align d-flex name">{{ contact.name }}</div>
+      <div class="col-3 align d-flex email">{{ contact.email }}</div>
+      <div class="col-3 align d-flex address">{{ contact.addr }}</div>
+    </div>
+  </ng-template>
+  <ng-template class="row ln align d-flex" #noData
+    >NO DATA AVAILABLE</ng-template
+  >
+  <div *ngIf="contactArr.length > 0; then data; else noData"></div>
+</div>

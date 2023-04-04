@@ -1,0 +1,37 @@
+<div class="shell d-flex bg-dark align container-fluid">
+  <div class="container bg-light formBox p-0">
+    <div class="container-fluid">
+      <div class="row bg-warning p-1">
+        <div class="col-12 f-h d-flex align">FORM</div>
+      </div>
+      <div class="row mt-4 d-flex align">
+        <input
+          id="name"
+          type="text"
+          placeholder="Enter Name.."
+          [(ngModel)]="name"
+        />
+      </div>
+      <div class="row mt-2 d-flex align">
+        <input
+          id="email"
+          type="email"
+          placeholder="Enter Email.."
+          [(ngModel)]="email"
+        />
+      </div>
+      <div class="row mt-2 d-flex align">
+        <textarea
+          id="address"
+          type="text"
+          placeholder="Enter Address.."
+          [(ngModel)]="address"
+        ></textarea>
+      </div>
+      <div class="row d-flex align error" *ngIf="invalid">INVALID DATA</div>
+      <div class="row mt-4 d-flex align">
+        <button class="btn btn-warning" (click)="getFormData()">SUBMIT</button>
+      </div>
+    </div>
+  </div>
+</div>
